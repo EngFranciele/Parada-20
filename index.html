@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parada20</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="Body">
+  <div class="container">
+    <h1>Escolha seu voto</h1>
+
+
+
+    <main>
+      <section class="container-main">
+        <div class="nome-candidatos">
+          <p>1: Adriana</p>
+        </div>
+        <div class="nome-candidatos">
+          <p>2: Fernando</p>
+        </div>
+        <div class="nome-candidatos">
+          <p>3: Gisele</p>
+        </div>
+        <div class="nome-candidatos">
+          <p>4: Odelice</p>
+        </div>
+        <div class="nome-candidatos">
+          <p>5: Nulo ou Branco.</p>
+        </div>
+
+      </section>
+    </main>
+    <button onclick="escolherVoto()">Vote</button>
+    <p id="mensagem"></p>
+    <button onclick="mudarDeCor()">Mude a Cor do Fundo.</button>
+  </div>
+
+
+  <script>
+    function escolherVoto() {
+      let candidatos = ['1: Adriana', '2: Fernando', '3: Gisele', '4: Odelice', '5: Nulo ou Branco'];
+
+      let voto = prompt('Escolha o seu voto: ' + candidatos.join(', '));
+
+      let mensagem;
+
+      switch (voto) {
+        case '1':
+          mensagem = 'Você votou na candidata: Adriana';
+          break;
+        case '2':
+          mensagem = 'Você votou no candidato: Fernando';
+          break;
+        case '3':
+          mensagem = 'Você votou na candidata: Gisele';
+          break;
+        case '4':
+          mensagem = 'Você votou na candidata: Odelice';
+          break;
+        case '5':
+          mensagem = 'Você votou Nulo ou Branco';
+          break;
+        default:
+          mensagem = 'Voto Inexistente';
+      }
+
+      document.getElementById('mensagem').innerText = mensagem;
+    }
+    function mudarDeCor() {
+      let cores = ['1: blue', '2: black', '3: yellow'];
+      console.log(`${cores}`);
+      let corEscolhida = prompt(` Escolha uma cor de fundo: ${cores}`);
+      console.log('corEscolhida');
+
+      let body = document.getElementById('meuBody');
+
+      switch (corEscolhida) {
+        case '1':
+          body.style.backgroundColor = 'blue';
+          break;
+        case '2':
+          body.style.backgroundColor = 'black';
+          break;
+        case '3':
+          body.style.backgroundColor = 'yellow';
+          break;
+        default:
+          console.log('Opção de cor inexistente');
+      }
+
+    }
+  </script>
+</body>
+
+</html>
